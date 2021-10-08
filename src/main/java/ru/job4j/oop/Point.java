@@ -32,7 +32,6 @@ public class Point {
     public static void main(String[] args) {
         Point a = new Point(0, 0);
         Point b = new Point(2, 0);
-        Point c = new Point(2, 0);
         double dist = a.distance(b);
         System.out.println(dist);
     }

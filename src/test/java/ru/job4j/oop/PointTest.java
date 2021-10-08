@@ -16,7 +16,7 @@ public class PointTest {
     }
 
     @Test
-    public void when3dThen1() {
+    public void when500to200then3() {
         double expected = 3;
         Point a = new Point(5, 0,0);
         Point b = new Point(2, 0,0);
