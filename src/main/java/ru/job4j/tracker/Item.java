@@ -4,10 +4,10 @@ import java.time.format.DateTimeFormatter;
 
 public class Item {
 
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
     private LocalDateTime created = LocalDateTime.now();
     private int id;
     private String name;
-    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
 
     @Override
     public String toString() {
