@@ -14,14 +14,10 @@ public class Matches {
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
             turn = !turn;
-            if (matches == 1) {
-                count--;
-            } else if (matches == 2) {
-                count = count - 2;
-            } else if (matches == 3)
-                count = count - 3;
+            if (matches <= 3) {
+                count = count - matches;
+            }
         }
-
         if (!turn) {
             System.out.println("Выиграл первый игрок");
         } else {
