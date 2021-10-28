@@ -28,8 +28,8 @@ public class StartUI {
                     System.out.println("Хранилище еще не содержит заявок");
                 }
             } else if (select == 2) {
-                System.out.println("=== Edit item ===");
-                System.out.println("Enter id: ");
+                System.out.print("=== Edit item ===");
+                System.out.print("Enter id: ");
                 int id = Integer.parseInt(scanner.nextLine());
                 System.out.println("Enter name: ");
                 String name = scanner.nextLine();
