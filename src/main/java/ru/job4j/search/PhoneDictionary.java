@@ -10,9 +10,6 @@ public class PhoneDictionary {
     }
 
     public ArrayList<Person> find(String key) {
-        if (key == null) {
-            throw new IllegalArgumentException("key не должен быть пустым");
-        }
         ArrayList<Person> result = new ArrayList<>();
         for (Person person : persons) {
             if (person.getName().contains(key) ||
