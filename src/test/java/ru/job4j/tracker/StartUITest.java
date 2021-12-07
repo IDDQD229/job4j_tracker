@@ -2,11 +2,12 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 public class StartUITest {
-
 
 
     @Test
@@ -22,7 +23,7 @@ public class StartUITest {
                 new EditItem(out),
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -49,7 +50,7 @@ public class StartUITest {
                 new FindAllAction(out),
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -77,7 +78,7 @@ public class StartUITest {
                 new FindByName(out),
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -104,7 +105,7 @@ public class StartUITest {
                 new FindById(out),
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -123,13 +124,13 @@ public class StartUITest {
     public void whenInvalidExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"9","0"}
+                new String[]{"9", "0"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = new UserAction[]{
                 new Exit(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                         "Menu:" + ln
