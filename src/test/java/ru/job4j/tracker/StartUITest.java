@@ -19,11 +19,11 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"0", String.valueOf(one.getId()), replaceName, "1"}
         );
-        UserAction[] actions = new UserAction[]{
+        List<UserAction> actions = List.of(
                 new EditItem(out),
                 new Exit(out)
-        };
-        new StartUI(out).init(in, tracker, List.of(actions));
+        );
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -46,11 +46,11 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"0", "1"}
         );
-        UserAction[] actions = new UserAction[]{
+        List<UserAction> actions = List.of(
                 new FindAllAction(out),
                 new Exit(out)
-        };
-        new StartUI(out).init(in, tracker, List.of(actions));
+        );
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -74,11 +74,11 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"0", name, "1"}
         );
-        UserAction[] actions = new UserAction[]{
+       List<UserAction> actions = List.of(
                 new FindByName(out),
                 new Exit(out)
-        };
-        new StartUI(out).init(in, tracker, List.of(actions));
+       );
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -101,11 +101,11 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"0", String.valueOf(one.getId()), "1"}
         );
-        UserAction[] actions = new UserAction[]{
+        List<UserAction> actions = List.of(
                 new FindById(out),
                 new Exit(out)
-        };
-        new StartUI(out).init(in, tracker, List.of(actions));
+        );
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu:" + ln
@@ -127,10 +127,10 @@ public class StartUITest {
                 new String[]{"9", "0"}
         );
         Tracker tracker = new Tracker();
-        UserAction[] actions = new UserAction[]{
+       List<UserAction> actions = List.of(
                 new Exit(out)
-        };
-        new StartUI(out).init(in, tracker, List.of(actions));
+       );
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                         "Menu:" + ln
