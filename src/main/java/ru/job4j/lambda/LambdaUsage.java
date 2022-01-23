@@ -10,8 +10,7 @@ public class LambdaUsage {
         List<String> strings = Arrays.asList("eeeee", "a", "ccc", "dddd", "bb");
         Comparator<String> comparator = (left, right) -> {
             int rsl = Integer.compare(right.length(), left.length());
-            System.out.println("Результат сравнения: ");
-            System.out.println(left + right + rsl);
+            System.out.println("Результат сравнения длины строк - " + left.length() + ":" + right.length() + "    " + rsl);
             return rsl;
         };
 
