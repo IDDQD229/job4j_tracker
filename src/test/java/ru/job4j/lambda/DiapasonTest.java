@@ -26,8 +26,8 @@ public class DiapasonTest {
 
     @Test
     public void whenLinear() {
-        List<Double> result = DiapasonFunction.diapason(5, 8, x -> x);
-        List<Double> expected = Arrays.asList(5D, 6D, 7D);
+        List<Double> result = DiapasonFunction.diapason(5, 8, x -> Math.pow(2, x));
+        List<Double> expected = Arrays.asList(32D, 64D, 128D);
         assertThat(result, is(expected));
     }
 }
