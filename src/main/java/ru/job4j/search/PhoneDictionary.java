@@ -20,8 +20,9 @@ public class PhoneDictionary {
         for (var person : persons) {
             if (combine.test(person)) {
                 result.add(person);
-            }
+             }
         }
         return result;
     }
+
 }
