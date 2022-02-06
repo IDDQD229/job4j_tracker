@@ -91,6 +91,7 @@ public class BankService {
      * @return вернет true если перевод осуществится и false если условия для перевода не будут
      * соблюдены (счёт не найден или не хватает денежных средств на счёте srcAcc (с которого переводят))
      */
+
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean rsl = false;
